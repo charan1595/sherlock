@@ -296,7 +296,7 @@ public class DetectorService {
             @Nullable Integer detectionWindow,
             @Nullable EgadsConfig config
     ) throws SherlockException, DruidException {
-        checkDatasource(query, cluster);
+//        checkDatasource(query, cluster);
         JsonArray druidResponse = queryDruid(query, cluster);
         List<TimeSeries> timeSeriesList = parserService.parseTimeSeries(druidResponse, query);
         List<EgadsResult> results = new ArrayList<>(timeSeriesList.size());

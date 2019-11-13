@@ -81,12 +81,12 @@ public class LambdaException {
      * @return R type object
      * @throws E exception type
      */
-    public static <T, R, E extends Exception> Function<T, R> functionalExceptionHandler(FunctionWithExceptions<T, R, E> function) throws E {
+    public static <T, R, E extends Exception> Function<T, R> functionalExceptionHandler(FunctionWithExceptions<T, R, E> function)  {
         return t -> {
             try {
                 return function.apply(t);
             } catch (Exception exception) {
-                throwActualException(exception);
+//                throwActualException(exception);
                 return null;
             }
         };

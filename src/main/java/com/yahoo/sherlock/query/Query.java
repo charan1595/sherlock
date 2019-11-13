@@ -159,7 +159,7 @@ public class Query {
                     }
                 });                                                                                               // make a set of dimensions
         } else if (this.queryObj.has(QueryConstants.DIMENSION)) {                                             // check for single dimension
-            dimensions.add(this.queryObj.getAsJsonPrimitive(QueryConstants.DIMENSION).getAsString());
+            dimensions.add(this.queryObj.getAsJsonObject(QueryConstants.DIMENSION).getAsJsonPrimitive("outputName").getAsString());
         }
         return dimensions;
     }

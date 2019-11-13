@@ -125,6 +125,12 @@ class App {
         // Route for instant anomaly-detection form
         get("/Flash-Query", Routes::viewInstantAnomalyJobForm, new ThymeleafTemplateEngine());
 
+        // Route for account anomaly-detection form
+        get("/custom/Account-Flash-Query",Routes::viewAccountInstantAnomalyJobForm, new ThymeleafTemplateEngine());
+
+        // Route for instant anomaly-detection on user input query
+        post("/Flash-Query/ProcessAccountAnomalyReport", Routes::processAccountInstantAnomalyJob, new ThymeleafTemplateEngine());
+
         // Route for instant anomaly-detection on user input query
         post("/Flash-Query/ProcessAnomalyReport", Routes::processInstantAnomalyJob, new ThymeleafTemplateEngine());
 
